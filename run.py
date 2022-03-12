@@ -26,7 +26,7 @@ def check():
           with open('ip.txt') as ip:
             lines = ip.read().rstrip()
             if len(lines) != 0:
-                cat()
+                #cat()
                 os.system("rm -rf ip.txt")
           ip.close()
 
