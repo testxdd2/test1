@@ -25,7 +25,7 @@ def check():
             lines = ip.read().rstrip()
             if len(lines) != 0:
                 cat()
-        lines.close()                
+        ip.close()                
 
 def server():
     os.system("clear")
