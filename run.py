@@ -14,14 +14,18 @@ logo = """\033[33m
             By: Euronymou5
 """
 
+def cat():
+ # os.system("cat ip.txt")
+  print('\n\033[94m[!] IP de la victima encontrado')
+  print(f'\n[~] IP: ', os.system("cat ip.txt"))
+
 def check():
     while True:
         with open('ip.txt') as ip:
             lines = ip.read().rstrip()
             if len(lines) != 0:
-                print('\n\033[94m[!] IP de la victima encontrado')
-                print(f'\n[~] IP: ', os.system("cat ip.txt"))
-        ip.close()                
+                cat()
+        lines.close()                
 
 def server():
     os.system("clear")
