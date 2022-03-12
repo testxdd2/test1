@@ -20,7 +20,7 @@ def check():
             lines = ip.read().rstrip()
             if len(lines) != 0:
                 print('\n\033[94m[!] IP de la victima encontrado')
-                print(f'\n[~] IP: {cat ip.txt}')
+                print(f'\n[~] IP: ', os.system("cat ip.txt"))
         ip.close()                
 
 def server():
