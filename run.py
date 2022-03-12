@@ -59,3 +59,5 @@ def menu():
         print('\n[!] Error opcion invalida.')
         time.sleep(2)
         menu()
+
+menu()
