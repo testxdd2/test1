@@ -37,6 +37,7 @@ def server():
     var = input('[~] ¿Quieres editar el puerto? (Default: 8080) [Y/n]: ')
     if var == "Y" or var == "y":
         port = int(input('\n[~] Ingresa el puerto: '))
+        print(f'\n[~] Utilizando el puerto {port}')
         os.system(f"php -S localhost:{port} > /dev/null 2>&1 &")
         check()
     elif var == "n" or var == "N":
