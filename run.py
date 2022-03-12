@@ -24,12 +24,12 @@ def check():
     printed = False
     while True:
       lol = path.getsize(RESULT)
-		  if lol == 0 and printed is False:
-			   print('\n[~] Esperando a que una persona entre al link presiona ctrl+c para salir')
-			   printed = True
+      if lol == 0 and printed is False:
+	print('\n[~] Esperando a que una persona entre al link presiona ctrl+c para salir')
+	printed = True
       if size > 0:
         cat()
-			  printed = False
+	printed = False
 
 def server():
     os.system("clear")
