@@ -20,6 +20,7 @@ def cat():
   os.system("rm -rf ip.txt")
 
 def check():
+    os.system("touch ip.txt")
     while True:
         with open('ip.txt') as ip:
             lines = ip.read().rstrip()
