@@ -38,7 +38,7 @@ def server():
     print('[~] Iniciando servidor php...')
     var = input('[~] ¿Quieres editar el puerto? (Default: 8080) [Y/n]: ')
     if var == "Y" or var == "y":
-        port = int(input('\n[~] Ingresa el puerto: ')
+        port = int(input('\n[~] Ingresa el puerto: '))
         os.system(f"php -S localhost:{port} > /dev/null 2>&1 &")
         check()
     elif var == "n" or var == "N":
@@ -56,7 +56,7 @@ def menu():
     print(logo)
     print('\n[1] Iniciar servidor php')
     print('[99] Salir')
-    T = int(input('\n>> ')
+    T = int(input('\n>> '))
     if  T == 1:
         server()
     elif T == 99:
