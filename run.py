@@ -5,6 +5,7 @@ from os import path
 
 IP = "ip.txt"
 
+
 logo = """\033[33m
   _____ _____  _      ____   _____  _____ ______ _____  
  |_   _|  __ \| |    / __ \ / ____|/ ____|  ____|  __ \ 
@@ -26,18 +27,18 @@ def check():
     while True:
         lol = path.getsize(IP)
         if lol == 0 and printed is False:
-	    print('\n[~] Esperando a que una persona entre al link presiona ctrl+c para salir')
-	    printed = True
-        if size > 0:
-           cat()
-	   printed = False
+            print('\n[~] Esperando a que una persona entre al link presionta CTRL + C para salir')
+            printed = True
+        elif lol > 0:
+            cat()
+            printed = False
 
 def server():
     os.system("clear")
     print('[~] Iniciando servidor php...')
     var = input('[~] ¿Quieres editar el puerto? (Default: 8080) [Y/n]: ')
     if var == "Y" or var == "y":
-        port = int(input('\n[~] Ingresa el puerto: '))
+        port = int(input('\n[~] Ingresa el puerto: ')
         os.system(f"php -S localhost:{port} > /dev/null 2>&1 &")
         check()
     elif var == "n" or var == "N":
@@ -55,7 +56,7 @@ def menu():
     print(logo)
     print('\n[1] Iniciar servidor php')
     print('[99] Salir')
-    T = int(input('\n>> '))
+    T = int(input('\n>> ')
     if  T == 1:
         server()
     elif T == 99:
@@ -64,5 +65,6 @@ def menu():
         print('\n[!] Error opcion invalida.')
         time.sleep(2)
         menu()
-
+        
+        
 menu()
